@@ -7,9 +7,9 @@
 echo "Updating the server..."
 
 apt update
-apt upgrade
-apt full-upgrade
-apt autoremove
+apt upgrade -y
+apt full-upgrade -y
+apt autoremove -y
 
 echo "Server updated."
 
@@ -53,3 +53,9 @@ echo "Starting containers..."
 
 docker network create traefik_network
 docker compose up -d
+
+# -----------------------------------
+# TO DO:
+#   -  Create folders for LetsEncrypt & WireGuard and map accordingly in Docker Compose
+#   -  Change WG port?
+# -----------------------------------
