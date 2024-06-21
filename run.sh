@@ -25,6 +25,6 @@ apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-co
 # GET COMPOSE FILE AND START
 # -----------------------------------
 
-wget https://github.com/runberg/easy-wg-vps/blob/fc7b99d46981edc6d9f8193ea6c6124591560c92/docker-compose.yml
+wget https://raw.githubusercontent.com/runberg/easy-wg-vps/main/docker-compose.yml
 docker network create traefik_network
 docker compose up -d
