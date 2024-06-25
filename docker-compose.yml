@@ -34,7 +34,7 @@ services:
     networks:
       - traefik_network
     volumes:
-      - .:/etc/wireguard
+      - wireguard_data:/etc/wireguard
     ports:
       - "51820:51820/udp"
     restart: unless-stopped
