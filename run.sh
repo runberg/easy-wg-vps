@@ -6,10 +6,10 @@
 
 echo "Updating the server..."
 
-apt update
-apt upgrade -y
-apt full-upgrade -y
-apt autoremove -y
+apt-get update
+apt-get upgrade -y
+apt-get full-upgrade -y
+apt-get autoremove -y
 
 echo "Server updated."
 
@@ -20,7 +20,7 @@ echo "Server updated."
 echo "Installing docker..."
 
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
-apt install docker.io docker-*-plugin
+apt-get install docker.io docker-*-plugin -y
 
 # -----------------------------------
 # GET COMPOSE FILE AND UPDATING
