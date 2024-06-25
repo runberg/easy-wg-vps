@@ -34,7 +34,7 @@ read -p "Enter the email address for LetsEncrypt: " email
 echo -n "Enter the password for the WG Admin page: "
 read -s pw
 
-wget https://raw.githubusercontent.com/runberg/easy-wg-vps/main/docker-compose.yml
+wget "https://raw.githubusercontent.com/runberg/easy-wg-vps/main/docker-compose.yml"
 
 sed -i -e 's/<DOMAIN>/$domain/g' docker-compose.yml
 sed -i -e 's/<PASSWORD>/$pw/g' docker-compose.yml
