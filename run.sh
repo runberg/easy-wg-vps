@@ -43,10 +43,10 @@ do
      sleep 5
 done
 
-sed -i -e 's/<DOMAIN>/"$domain"/g' docker-compose.yml
-echo "sed -i -e 's/<DOMAIN>/"$domain"/g' docker-compose.yml"
-sed -i -e 's/<PASSWORD>/"$pw"/g' docker-compose.yml
-sed -i -e 's/<EMAIL>/"$email"/g' docker-compose.yml
+sed -i -e 's/<DOMAIN>/$domain/g' docker-compose.yml
+echo "sed -i -e 's/<DOMAIN>/$domain/g' docker-compose.yml"
+sed -i -e 's/<PASSWORD>/$pw/g' docker-compose.yml
+sed -i -e 's/<EMAIL>/$email/g' docker-compose.yml
 
 # -----------------------------------
 # STARTING CONTAINER
