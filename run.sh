@@ -6,10 +6,10 @@
 
 echo "Updating the server..."
 
-apt-get update
-apt-get upgrade -y
-apt-get full-upgrade -y
-apt-get autoremove -y
+#apt-get update
+#apt-get upgrade -y
+#apt-get full-upgrade -y
+#apt-get autoremove -y
 
 echo "Server updated."
 
@@ -44,6 +44,7 @@ do
 done
 
 sed -i -e 's/<DOMAIN>/"$domain"/g' docker-compose.yml
+echo "sed -i -e 's/<DOMAIN>/"$domain"/g' docker-compose.yml"
 sed -i -e 's/<PASSWORD>/"$pw"/g' docker-compose.yml
 sed -i -e 's/<EMAIL>/"$email"/g' docker-compose.yml
 
