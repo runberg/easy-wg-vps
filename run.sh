@@ -48,7 +48,7 @@ echo "Starting containers..."
 
 mkdir wireguard_data traefik_letsencrypt_data
 docker network create traefik_network
-docker compose up -d
+#docker compose up -d
 
 # -----------------------------------
 # TO DO:
