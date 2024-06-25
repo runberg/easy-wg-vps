@@ -1,4 +1,4 @@
-## Desciption ##
+## Description ##
 
 This is a quick and simple script to install [WG-Easy](https://github.com/wg-easy/wg-easy) on a clean VPS.
 
