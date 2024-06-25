@@ -36,9 +36,9 @@ read -s pw
 
 wget "https://raw.githubusercontent.com/runberg/easy-wg-vps/main/docker-compose.yml"
 
-sed -i -e 's/<DOMAIN>/$domain/g' /docker-compose.yml
-sed -i -e 's/<PASSWORD>/$pw/g' /docker-compose.yml
-sed -i -e 's/<EMAIL>/$email/g' /docker-compose.yml
+sed -i -e 's/<DOMAIN>/"$domain"/g' /docker-compose.yml
+sed -i -e 's/<PASSWORD>/"$pw"/g' /docker-compose.yml
+sed -i -e 's/<EMAIL>/"$email"/g' /docker-compose.yml
 
 # -----------------------------------
 # STARTING CONTAINER
