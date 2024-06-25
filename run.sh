@@ -59,6 +59,6 @@ docker compose up -d
 
 # -----------------------------------
 # TO DO:
-#   -  Create folders for LetsEncrypt & WireGuard and map accordingly in Docker Compose
+#   -  Auto update server and docker image
 #   -  Change WG port?
 # -----------------------------------
