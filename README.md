@@ -10,8 +10,9 @@ For WireGurad, WG-Easy is used. WG-Easy is installed using Docker Compose. For t
 Simply run the following command to setup everything:
 
 ```
-<command>
+bash <(wget -qO- https://raw.githubusercontent.com/runberg/easy-wg-vps/main/run.sh)
 ```
+Once the scipt has completed the installation you will be able to access the WireGuard admin page on https:<yourdomain>
 
 
 
