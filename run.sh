@@ -6,10 +6,10 @@
 
 echo "Updating the server..."
 
-#apt-get update
-#apt-get upgrade -y
-#apt-get full-upgrade -y
-#apt-get autoremove -y
+apt-get update
+apt-get upgrade -y
+apt-get full-upgrade -y
+apt-get autoremove -y
 
 echo "Server updated."
 
@@ -19,7 +19,7 @@ echo "Server updated."
 
 echo "Installing docker..."
 
-for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd containerd.io runc; do sudo apt-get remove $pkg; done
 apt-get install docker.io docker-*-plugin -y
 
 # -----------------------------------
@@ -43,10 +43,9 @@ do
      sleep 5
 done
 
-sed -i -e 's/<DOMAIN>/$domain/g' docker-compose.yml
-echo "sed -i -e 's/<DOMAIN>/$domain/g' docker-compose.yml"
-sed -i -e 's/<PASSWORD>/$pw/g' docker-compose.yml
-sed -i -e 's/<EMAIL>/$email/g' docker-compose.yml
+sed -i -e 's/<DOMAIN>/'"$domain"'/g' docker-compose.yml
+sed -i -e 's/<PASSWORD>/'"$pw"'/g' docker-compose.yml
+sed -i -e 's/<EMAIL>/'"$email"'/g' docker-compose.yml
 
 # -----------------------------------
 # STARTING CONTAINER
@@ -55,8 +54,8 @@ sed -i -e 's/<EMAIL>/$email/g' docker-compose.yml
 echo "Starting containers..."
 
 mkdir wireguard_data traefik_letsencrypt_data
-#docker network create traefik_network
-#docker compose up -d
+docker network create traefik_network
+docker compose up -d
 
 # -----------------------------------
 # TO DO:
