@@ -35,6 +35,7 @@ read -p "Enter the email address for LetsEncrypt: " email
 
 echo -n "Enter the password for the WG Admin page: "
 read -s pw
+echo ""
 
 until [ -f docker-compose.yml ]
 do
@@ -42,12 +43,9 @@ do
      sleep 5
 done
 
-echo "sed -i -e 's/<DOMAIN>/$domain/g' docker-compose.yml"
-sed -i -e 's/<DOMAIN>/$domain/g' docker-compose.yml
-echo "sed -i -e 's/<PASSWORD>/$pw/g' docker-compose.yml"
-sed -i -e 's/<PASSWORD>/$pw/g' docker-compose.yml
-echo "sed -i -e 's/<EMAIL>/$email/g' docker-compose.yml"
-sed -i -e 's/<EMAIL>/$email/g' docker-compose.yml
+sed -i -e 's/<DOMAIN>/"$domain"/g' docker-compose.yml
+sed -i -e 's/<PASSWORD>/"$pw"/g' docker-compose.yml
+sed -i -e 's/<EMAIL>/"$email"/g' docker-compose.yml
 
 # -----------------------------------
 # STARTING CONTAINER
@@ -56,7 +54,7 @@ sed -i -e 's/<EMAIL>/$email/g' docker-compose.yml
 echo "Starting containers..."
 
 mkdir wireguard_data traefik_letsencrypt_data
-docker network create traefik_network
+#docker network create traefik_network
 #docker compose up -d
 
 # -----------------------------------
