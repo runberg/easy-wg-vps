@@ -34,7 +34,7 @@ services:
     networks:
       - traefik_network
     volumes:
-      - wireguard_data:/etc/wireguard
+      - ./wireguard_data:/etc/wireguard
     ports:
       - "51820:51820/udp"
     restart: unless-stopped
@@ -49,7 +49,7 @@ services:
     image: traefik:latest
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - traefik_letsencrypt_data:/letsencrypt
+      - ./traefik_letsencrypt_data:/letsencrypt
     networks:
       - traefik_network
     ports:
