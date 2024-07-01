@@ -38,7 +38,7 @@ while true; do
              
              CRON=$'0 2 * * 1 docker-compose up --pull --force-recreate --build -d; docker system prune -f -a -v'
              (crontab -l ; echo "$CRON"))| crontab -
-             ;;
+             exit;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
