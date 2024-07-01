@@ -47,6 +47,8 @@ services:
 
   traefik:
     image: traefik:latest
+    container_name: traefik
+    restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./traefik_letsencrypt_data:/letsencrypt
