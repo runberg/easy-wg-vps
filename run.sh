@@ -36,7 +36,7 @@ while true; do
              ENABLE=$'APT::Periodic::Update-Package-Lists "1";\nAPT::Periodic::Unattended-Upgrade "1";\nAPT::Periodic::AutoCleanInterval "7";'
              echo "$ENABLE" > /etc/apt/apt.conf.d/20auto-upgrades
              
-             CRON=$'0 2 * * 1 docker-compose up --pull --force-recreate --build -d; docker system prune -f -a -v'
+             CRON=$'0 2 * * 1 docker-compose --pull; docker-compose up --force-recreate -d; docker system prune -f -a'
              (crontab -l ; echo "$CRON"))| crontab -
              exit;;
         [Nn]* ) exit;;
